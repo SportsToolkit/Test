@@ -2550,31 +2550,71 @@
     }
 }
 
-        .news-wrapper {
-  margin: 2rem auto;
-  padding: 1rem;
-  max-width: 800px;
+        /* NEWS SECTION STYLES */
+.news-wrapper {
+  /* A subtle background gradient to differentiate it from other sections */
+  background: linear-gradient(to bottom right, #ffc966, #ffe28a);
+  border: 2px solid #000;
+  border-radius: 16px;
+  margin: 3rem auto; /* spacing from the featured section above */
+  padding: 2rem 2rem;
+  max-width: 1200px; /* keep it narrower for a cleaner layout */
+  text-align: left;  /* matches your main site’s text alignment */
+  position: relative;
 }
 
-.news-item {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+/* Main news heading */
+.news-wrapper h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #0070C9; /* tie in your site’s theme-blue */
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
 }
+
+/* Each news item becomes a 'card' with the site's black border & box-shadow hover */
+.news-item {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+/* The "tilt" hover effect seen in featured items, for consistency */
+.news-item:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+/* Headline within each news item */
 .news-item h3 {
   font-size: 1.4rem;
-  color: #0070C9;
   margin-bottom: 0.5rem;
+  color: #0070C9;
+  font-weight: 700;
 }
+
+/* Paragraph text */
 .news-item p {
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
 }
+
+/* Links to read more, etc. */
 .news-item a {
-  font-size: 1rem;
   color: #0070C9;
   text-decoration: underline;
+  font-weight: 600;
+}
+
+.news-item a:hover {
+  color: #005CAB;
 }
 
 
