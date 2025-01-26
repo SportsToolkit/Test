@@ -2550,109 +2550,171 @@
     }
 }
 
-/* NEWS SECTION STYLES */
-        
+/* ===========================
+   NEWS SECTION STYLES
+=========================== */
+
+/* Container for the Latest News Section */
 .news-wrapper {
-  margin: 6rem auto 4rem; /* Increased top margin */
-  background-color: #0070C9; /* Your site's blue */
+  /* Reduced top and bottom margins to eliminate the huge gap */
+  margin: 3rem auto 2rem; /* Top: 3rem, Bottom: 2rem */
+
+  /* Set the background to your site's blue */
+  background-color: #0070C9;
+
+  /* Black border and rounded corners */
   border: 2px solid #000;
   border-radius: 16px;
+
+  /* Padding inside the wrapper */
   padding: 2rem;
-  max-width: 800px; /* Align with container */
-  width: 100%;
+
+  /* Align the width with featured containers (assuming 1200px) */
+  max-width: 1200px;
+  width: 90%; /* Allows some padding on very large screens */
+
+  /* Positioning and shadow for depth */
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Text alignment */
   text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Separator Line Above the News Wrapper */
 .news-wrapper::before {
   content: "";
   display: block;
-  width: 80%;
-  max-width: 1100px;
-  height: 3px;
-  background-color: #000;
+  width: 80%; /* 80% of the wrapper's width */
+  height: 3px; /* Thickness of the separator line */
+  background-color: #000; /* Black color */
+
+  /* Position the separator line above the wrapper */
   position: absolute;
-  top: -1.5rem;
+  top: -1rem; /* Adjusted to reduce the gap */
   left: 50%;
   transform: translateX(-50%);
 }
 
+/* Heading Styles within News Section */
 .news-wrapper h2 {
   text-transform: uppercase;
   font-size: 2rem;
-  color: #FFFFFF; 
+  color: #FFFFFF; /* White color for contrast against blue background */
   text-align: center;
   letter-spacing: 1px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced margin for tighter spacing */
 }
 
+/* Individual News Item Styles */
 .news-item {
-  background: #ffc966; 
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #ffc966; /* Light yellow background for contrast */
+  border: 2px solid #000; /* Black border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1.5rem; /* Inner padding */
+  margin-bottom: 1.5rem; /* Space below each news item */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
   position: relative;
 }
 
+/* Hover Effects for News Items */
 .news-item:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 5px 5px 0px #000;
+  transform: translate(-5px, -5px); /* Slight upward and left shift */
+  box-shadow: 5px 5px 0px #000; /* Black shadow to create a 3D pop-out effect */
 }
 
+/* Heading Styles within News Items */
 .news-item h3 {
   font-size: 1.4rem;
-  color: #000000; 
+  color: #000000; /* Black color for readability */
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Space below the heading */
 }
 
+/* Paragraph Styles within News Items */
 .news-item p {
   font-size: 1rem;
-  color: #333333; /* Dark text */
+  color: #333333; /* Dark grey for good contrast */
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Space below paragraphs */
 }
 
+/* Link Styles within News Items */
 .news-item a {
-  color: #0070C9; /* White links */
+  color: #0070C9; /* Blue links consistent with site theme */
   text-decoration: underline;
   font-weight: 600;
 }
 
 .news-item a:hover {
-  color: #e0e0e0; /* Light grey on hover */
+  color: #e0e0e0; /* Light grey on hover for subtlety */
 }
 
-/* OPTIONAL: Additional Styles for Responsiveness */
+/* ===========================
+   RESPONSIVENESS STYLES
+=========================== */
+
+/* For Tablets and Smaller Desktops */
+@media (max-width: 1200px) {
+  .news-wrapper {
+    width: 95%; /* Slightly wider on smaller screens */
+  }
+}
+
+/* For Tablets and Mobile Devices */
 @media (max-width: 768px) {
   .news-wrapper {
-    padding: 1.5rem;
-    margin: 4rem auto 2rem;
+    padding: 1.5rem; /* Reduced padding */
+    margin: 3rem auto 2rem; /* Adjusted margins */
+    border-radius: 12px; /* Slightly smaller border radius */
   }
-  
+
   .news-wrapper::before {
-    width: 90%;
-    top: -1rem;
+    width: 90%; /* Wider separator line */
+    top: -0.8rem; /* Adjusted position */
   }
-  
+
   .news-wrapper h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* Smaller font size for headings */
+    margin-bottom: 1.2rem; /* Reduced margin */
   }
-  
+
   .news-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Smaller headlines */
   }
-  
+
   .news-item p, .news-item a {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Smaller text for paragraphs and links */
   }
 }
 
+/* For Very Small Screens (e.g., Smartphones) */
+@media (max-width: 480px) {
+  .news-wrapper {
+    width: 100%; /* Full width on very small screens */
+    padding: 1rem; /* Further reduced padding */
+    margin: 2rem auto 1rem; /* Adjusted margins */
+    border-radius: 10px; /* Even smaller border radius */
+  }
 
+  .news-wrapper::before {
+    width: 95%; /* Almost full width separator */
+    top: -0.5rem; /* Further adjusted position */
+  }
+
+  .news-wrapper h2 {
+    font-size: 1.6rem; /* Even smaller heading font */
+    margin-bottom: 1rem; /* Further reduced margin */
+  }
+
+  .news-item h3 {
+    font-size: 1.1rem; /* Further reduced headline font */
+  }
+
+  .news-item p, .news-item a {
+    font-size: 0.8rem; /* Further reduced paragraph and link font */
+  }
+}
 
 
     /* MODAL OVERLAY */
