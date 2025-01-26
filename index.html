@@ -2570,8 +2570,8 @@
   padding: 2rem;
 
   /* Align the width with featured containers (assuming 1200px) */
-  max-width: 1200px;
-  width: 90%; /* Allows some padding on very large screens */
+  max-width: 800px;
+  width: 80%; /* Allows some padding on very large screens */
 
   /* Positioning and shadow for depth */
   position: relative;
@@ -2581,20 +2581,6 @@
   text-align: left;
 }
 
-/* Separator Line Above the News Wrapper */
-.news-wrapper::before {
-  content: "";
-  display: block;
-  width: 80%; /* 80% of the wrapper's width */
-  height: 3px; /* Thickness of the separator line */
-  background-color: #000; /* Black color */
-
-  /* Position the separator line above the wrapper */
-  position: absolute;
-  top: -1rem; /* Adjusted to reduce the gap */
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 /* Heading Styles within News Section */
 .news-wrapper h2 {
@@ -2691,7 +2677,7 @@
 /* For Very Small Screens (e.g., Smartphones) */
 @media (max-width: 480px) {
   .news-wrapper {
-    width: 100%; /* Full width on very small screens */
+    width: 80%; /* Full width on very small screens */
     padding: 1rem; /* Further reduced padding */
     margin: 2rem auto 1rem; /* Adjusted margins */
     border-radius: 10px; /* Even smaller border radius */
