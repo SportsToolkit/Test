@@ -3,41 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 5 Universities for Sports Management</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Exciting Developments in Sports Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+     <style>
+        /* GENERAL STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #1D1D1F;
+            background-color: #FFFFFF;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            padding-top: 80px; /* To prevent content from hiding behind fixed header */
+        }
+        a {
+            color: #0070C9;
+            text-decoration: none;
+            transition: color 0.1s ease;
+        }
+        a:hover {
+            color: #005CAB;
+            text-decoration: underline;
+        }
+        :root {
+            --theme-blue: #0070C9; 
+            --modal-blur: 5px; 
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        /* HEADER SECTION */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1004;
+        }
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1D1D1F;
+            margin: 0;
+        }
+        header .menu-button {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0070C9;
+            cursor: pointer;
+            transition: color 0.1s ease;
+            position: relative;
+            z-index: 1005;
+        }
+        header .menu-button:hover {
+            color: #005CAB;
+        }
+        .logo-link {
+            text-decoration: none;
+        }
+        .logo-link h1 {
+            color: #0070C9;
+            transition: color 0.1s ease;
+        }
+        .logo-link:hover h1 {
+            color: #005CAB;
+        }
+        .logo-link:hover {
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 2rem; /* More top/bottom padding for a deeper header */
+            }
+            header h1 {
+                font-size: 2rem; /* Larger text for 'Path2Sport / Sco' */
+            }
+            header .menu-button {
+                font-size: 1.2rem; /* Larger MENU font */
+            }
+        }
+
+        /* MENU SECTION */
+        #menu-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            z-index: 1006;
+            padding-top: 80px;
+            overflow-y: auto;
+        }
+        #menu-section.active {
+            display: flex;
+        }
+        #menu-section button#close-menu {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #0070C9;
+            transition: color 0.1s ease;
+        }
+        #menu-section button#close-menu:hover {
+            color: #005CAB;
+        }
+        #menu-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0070C9;
+            text-align: center;
+        }
+        #menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            align-items: center;
+            padding-top: 2rem;
+        }
+        #menu-options a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0070C9;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            max-width: 320px;
+            width: 100%;
+            transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #menu-options a:hover {
+            background-color: #0070C9;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--theme-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .article-content {
+            font-size: 1.125rem;
+            color: #555;
+            line-height: 1.8;
+            letter-spacing: 0.4px;
+            font-weight: 300;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--theme-blue);
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .back-link:hover {
+            background-color: #005CAB;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER SECTION */
+        footer {
+            background-color: #fff;
+            color: #555;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin-top: 4rem;
+        }
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (Optional) -->
+
+    <!-- HEADER SECTION -->
     <header>
-        <nav>
-            <a href="index.html" id="logo-link">Path2Sport</a>
-            <!-- Add navigation links if necessary -->
-        </nav>
+        <a href="index.html" id="logo-link" class="logo-link"><h1>Path2Sport / Sco</h1></a>
+        <div class="menu-button" id="open-menu">☰</div>
     </header>
 
-    <!-- Article Content -->
-    <section class="article-container" id="article2">
-        <h1 class="article-title">Top 5 Universities for Sports Management</h1>
-        <p class="article-content">
-            <!-- Your article content goes here. For example: -->
-            Selecting the right university is crucial for aspiring sports management professionals. Here are the top 5 universities in Scotland that offer exceptional programs in sports management:
-            <br><br>
-            <strong>1. University of Edinburgh:</strong> Known for its comprehensive curriculum and strong industry connections, the University of Edinburgh provides students with hands-on experience through internships and collaborative projects.
-            <br><br>
-            <strong>2. Abertay University:</strong> With a focus on practical skills, Abertay University equips students with the knowledge needed to excel in various facets of sports management, from event planning to athlete representation.
-            <br><br>
-            <strong>3. Glasgow Caledonian University:</strong> Offering state-of-the-art facilities and a dynamic learning environment, Glasgow Caledonian University prepares students for leadership roles in the sports industry.
-            <br><br>
-            <strong>4. Robert Gordon University:</strong> Emphasizing both theoretical and practical aspects, Robert Gordon University ensures that graduates are well-prepared to tackle real-world challenges in sports management.
-            <br><br>
-            <strong>5. Queen Margaret University:</strong> Renowned for its specialized courses and industry partnerships, Queen Margaret University offers a unique blend of academic rigor and practical training.
-        </p>
-        <a href="index.html" class="back-link">← Back to News</a>
+    <!-- MENU SECTION -->
+    <section id="menu-section" aria-hidden="true">
+        <button id="close-menu" aria-label="Close Menu">&times;</button>
+        <h2>MENU</h2>
+        <div id="menu-options">
+            <a href="index.html" id="menu-home" aria-label="Return to Home">Home</a>
+            <a href="index.html#about" id="menu-about">About</a>
+            <a href="index.html#uni-courses" id="menu-uni-courses">Uni Courses</a>
+            <a href="index.html#college-courses" id="menu-college-courses">College Courses</a>
+            <a href="index.html#career-paths" id="menu-career-paths">Explore Careers</a>
+            <a href="index.html#employability" id="menu-employability">Employability</a>
+            <a href="index.html#no-right-path" id="menu-no-right-path">No Wrong Path</a>
+            <!-- If you have other articles, add links like below -->
+            <!-- <a href="article2.html" id="menu-article2">Article 2</a> -->
+        </div>
     </section>
 
-    <!-- Footer (Optional) -->
+    <!-- MAIN ARTICLE CONTENT -->
+    <main>
+        <section class="article-container">
+            <h1 class="article-title">Exciting Developments in Sports Science</h1>
+            <p class="article-content">
+                Sports science has seen remarkable advancements in recent years, revolutionizing how athletes train and perform. From wearable technology that monitors biometric data in real-time to AI-driven analytics that tailor training programs to individual needs, the integration of technology has enhanced athlete performance and injury prevention.
+                <br><br>
+                One significant development is the use of <strong>biomechanical analysis</strong>, allowing coaches to fine-tune an athlete's technique for optimal performance. Additionally, <strong>nutrition science</strong> has evolved, providing athletes with personalized dietary plans that maximize energy levels and recovery times.
+                <br><br>
+                These innovations not only improve performance but also extend athletic careers by minimizing the risk of injuries. As sports science continues to grow, we can expect even more groundbreaking technologies that will further bridge the gap between athletic potential and actual performance.
+                <br><br>
+                Moreover, the advent of virtual reality (VR) and augmented reality (AR) in training regimes offers immersive environments for skill development without the physical strain. Mental health support has also become a focal point, with sports psychologists utilizing new methods to help athletes manage stress and maintain peak mental condition.
+                <br><br>
+                The future of sports science promises a holistic approach to athlete development, combining physical training with mental resilience and technological enhancements to produce well-rounded, high-performing individuals in the sports arena.
+            </p>
+            <a href="index.html#news-section" class="back-link">← Back to News</a>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
     <footer>
         <p>&copy; 2025 Path2Sport. All rights reserved.</p>
     </footer>
+
+    <!-- JAVASCRIPT FOR MENU FUNCTIONALITY -->
+    <script>
+        // DOM Elements
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const menuSection = document.getElementById('menu-section');
+        const menuLinks = document.querySelectorAll('#menu-options a');
+
+        // Function to open the menu
+        function openMenu() {
+            menuSection.classList.add('active');
+            menuSection.setAttribute('aria-hidden', 'false');
+            // Prevent background scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close the menu
+        function closeMenu() {
+            menuSection.classList.remove('active');
+            menuSection.setAttribute('aria-hidden', 'true');
+            // Restore background scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners for opening and closing the menu
+        openMenuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+
+        // Close the menu when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === menuSection) {
+                closeMenu();
+            }
+        });
+
+        // Close the menu when a menu link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
 </body>
 </html>
