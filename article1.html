@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exciting Developments in Sports Science</title>
+    <!-- Font Links -->
     <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-     <style>
+    <!-- Inline CSS for Consistency -->
+    <style>
         /* GENERAL STYLES */
         * {
             box-sizing: border-box;
@@ -102,80 +104,80 @@
         }
 
         /* MENU SECTION */
-    #menu-section {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 0 10px rgba(0,0,0,0.15);
-        z-index: 1006;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-        padding-top: 80px;
-    }
-    #menu-section.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    #menu-section h2 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        color: #0070C9;
-        margin-top: 0;
-        text-align: center;
-    }
-    #menu-options {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        align-items: center;
-        padding-top: 2rem;
-    }
-    #menu-options a {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #0070C9;
-        background: #fff;
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 8px;
-        padding: 0.5rem 1rem;
-        max-width: 320px;
-        width: 100%;
-        transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #menu-options a:hover {
-        background-color: #0070C9;
-        color: #fff;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        transform: scale(1.02);
-    }
-    #close-menu {
-        position: absolute;
-        top: 3rem;
-        right: 3rem;
-        background: none;
-        border: none;
-        font-size: 3rem;
-        cursor: pointer;
-        color: #0070C9;
-        transition: color 0.1s ease;
-    }
-    #close-menu:hover {
-        color: #005CAB;
-    }
+        #menu-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            z-index: 1006;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+            padding-top: 80px;
+        }
+        #menu-section.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        #menu-section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #0070C9;
+            margin-top: 0;
+            text-align: center;
+        }
+        #menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            align-items: center;
+            padding-top: 2rem;
+        }
+        #menu-options a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0070C9;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            max-width: 320px;
+            width: 100%;
+            transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #menu-options a:hover {
+            background-color: #0070C9;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+        #close-menu {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            background: none;
+            border: none;
+            font-size: 3rem;
+            cursor: pointer;
+            color: #0070C9;
+            transition: color 0.1s ease;
+        }
+        #close-menu:hover {
+            color: #005CAB;
+        }
 
         /* CONTAINER */
         .container {
