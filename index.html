@@ -847,17 +847,68 @@
         text-decoration: underline;
     }
 
-    /* FOOTER SECTION */
-    footer {
-        background-color: #fff;
-        color: #555;
-        padding: 2rem 1rem;
-        text-align: center;
-        border-top: 1px solid rgba(0,0,0,0.1);
+    /* FOOTER STYLES */
+footer {
+    background-color: #6fe7b3; /* Light, neutral background */
+    padding: 20px 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #333; /* Darker text for readability */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-right ul.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-right ul.footer-links li {
+    /* No additional styles needed */
+}
+
+.footer-right ul.footer-links li a {
+    text-decoration: none;
+    color: #0070C9; /* Brand blue */
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease, transform 0.3s ease;
+}
+
+.footer-right ul.footer-links li a:hover,
+.footer-right ul.footer-links li a:focus {
+    color: #005CAB; /* Darker blue on hover */
+    text-decoration: underline;
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
     }
-    footer p {
-        font-size: 0.875rem;
+
+    .footer-right ul.footer-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
+}
 
     /* MENU SECTION */
     #menu-section {
@@ -877,6 +928,7 @@
         visibility: hidden;
         transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         padding-top: 80px;
+        overflow-y: auto;
     }
     #menu-section.active {
         transform: translateY(0);
@@ -934,6 +986,20 @@
     #close-menu:hover {
         color: #005CAB;
     }
+    
+    @media (max-width: 480px) {
+    #menu-section h2 {
+        font-size: 2.5rem;
+    }
+    #menu-options a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        max-width: 280px;
+    }
+    #close-menu {
+        font-size: 2.5rem;
+    }
+}
 
     /* INSERT SECTION */
     .insert-section {
@@ -1471,6 +1537,64 @@
     word-break: break-word;
     overflow-wrap: break-word;
   }
+}
+
+/* SUPPORT SECTION */
+.support {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 3rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1002;
+    overflow-y: auto;
+}
+.support.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+.support .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+.support h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.1rem;
+    font-weight: 700;
+    color: #0070C9;
+}
+.support p {
+    font-size: 1.125rem;
+    color: #555;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+    white-space: pre-line;
+}
+
+/* Optional: Style for the Donate Button */
+.donate-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070C9;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.donate-button:hover,
+.donate-button:focus {
+    background-color: #005CAB;
+    transform: translateY(-2px);
 }
 
 
@@ -2357,6 +2481,149 @@
     }
 }
 
+/* Privacy Policy Section Styles */
+.privacy-policy {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: fixed; /* Positioned as a modal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #000;
+    overflow-y: auto;
+    z-index: 1008; /* Above the consent banner */
+    transform: scale(0.95); /* Slightly scaled down */
+}
+
+.privacy-policy.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1); /* Scale to normal size when active */
+}
+
+/* Container within the modal for content */
+.privacy-policy .container {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6; /* Improved line height for readability */
+    font-size: 0.95rem; /* Slightly smaller font for better readability */
+    color: #333; /* Darker text for better contrast */
+}
+
+/* Close button styling */
+.privacy-policy .close-section {
+    position: absolute;
+    top: 1.5rem; /* Increased top margin for better spacing */
+    right: 1.5rem; /* Increased right margin for better spacing */
+    background: none;
+    border: none;
+    font-size: 2rem; /* Increased font size for better visibility */
+    font-weight: bold; /* Makes the X stand out */
+    cursor: pointer;
+    color: #0070C9; /* Slightly lighter color for close button */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.privacy-policy .close-section:hover,
+.privacy-policy .close-section:focus {
+    color: #005CAB; /* Darker color on hover/focus for visibility */
+    transform: scale(1.2); /* Slightly enlarges the X on hover/focus */
+}
+
+/* Headings Styling */
+.privacy-policy h2,
+.privacy-policy h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem; /* Space below headings */
+    font-family: 'Space Grotesk', sans-serif;
+    color: #0070C9; /* Theme color for headings */
+}
+
+.privacy-policy h2 {
+    font-size: 1.8rem; /* Larger font for main heading */
+}
+
+.privacy-policy h3 {
+    font-size: 1.4rem; /* Slightly smaller for subheadings */
+}
+
+/* Paragraphs Styling */
+.privacy-policy p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+    font-size: 0.95rem; /* Consistent font size */
+    color: #444; /* Darker text for paragraphs */
+}
+
+/* Lists Styling */
+.privacy-policy ul {
+    list-style-type: disc; /* Standard bullet points */
+    padding-left: 1.5rem; /* Proper indentation */
+    margin-bottom: 1rem; /* Space below lists */
+}
+
+.privacy-policy ul ul {
+    list-style-type: circle; /* Nested lists with different bullet */
+    padding-left: 1.5rem; /* Additional indentation for nested lists */
+}
+
+/* Links Styling */
+.privacy-policy a {
+    color: #0070C9; /* Theme color for links */
+    text-decoration: underline; /* Underline for clarity */
+}
+
+.privacy-policy a:hover,
+.privacy-policy a:focus {
+    color: #005fa3; /* Darker shade on hover/focus */
+}
+
+/* Form Elements (if any) Styling */
+.privacy-policy form {
+    margin-top: 1.5rem;
+}
+
+.privacy-policy .preference-item {
+    margin-bottom: 1rem;
+}
+
+.privacy-policy .preference-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.privacy-policy .preference-buttons .cookie-btn {
+    flex: 1;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .privacy-policy .container {
+        padding: 1rem;
+    }
+
+    .privacy-policy h2 {
+        font-size: 1.3rem;
+    }
+
+    .privacy-policy h3 {
+        font-size: 1rem;
+    }
+
+    .privacy-policy p,
+    .privacy-policy ul {
+        font-size: 0.85rem;
+    }
+}
+
 
 /* Updated Cookie Consent Banner Styles */
 .cookie-consent-banner {
@@ -2450,6 +2717,12 @@
 
 
 @media (max-width: 600px) {
+    
+    .cookie-consent-banner {
+        transform: translateX(-50%); /* Center the banner */
+        max-width: 85%; /* Ensure banner doesn't exceed 90% of viewport width */
+    }
+
     .cookie-banner-content {
         padding: 0 1rem;
     }
@@ -3300,11 +3573,11 @@
                         <td data-label="Region">Lanarkshire</td>
                         <td data-label="Website">
                             <a
-                              href="https://www.newcollege.ac.uk"
+                              href="https://www.nclanarkshire.ac.uk"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              www.nclanarkshire.ac.uk
+                              nclanarkshire.ac.uk
                             </a>
                         </td>
                     </tr>
@@ -4044,18 +4317,33 @@
     </div>
 
     <section id="menu-section">
-        <button id="close-menu" aria-label="Close Menu">&times;</button>
-        <h2>MENU</h2>
-        <div id="menu-options">
-            <a href="#" id="menu-home" aria-label="Return to Home">Home</a>
-            <a href="#" id="menu-about">About</a>
-            <a href="#" id="menu-uni-courses">Uni Courses</a>
-            <a href="#" id="menu-college-courses">College Courses</a>
-            <a href="#" id="menu-career-paths">Explore Careers</a>
-            <a href="#" id="menu-employability">Employability</a>
-            <a href="#" id="menu-no-right-path">No Wrong Path</a>
-        </div>
-    </section>
+    <button id="close-menu" aria-label="Close Menu">&times;</button>
+    <h2>MENU</h2>
+    <div id="menu-options">
+        <a href="#" id="menu-home" aria-label="Return to Home">Home</a>
+        <a href="#" id="menu-about">About</a>
+        <a href="#" id="menu-uni-courses">Uni Courses</a>
+        <a href="#" id="menu-college-courses">College Courses</a>
+        <a href="#" id="menu-career-paths">Explore Careers</a>
+        <a href="#" id="menu-employability">Employability</a>
+        <a href="#" id="menu-no-right-path">No Wrong Path</a>
+        <a href="#" id="menu-support">Support Us</a> <!-- New Support Link -->
+
+    </div>
+</section>
+    
+    <!-- Support Section -->
+<section id="support-section" class="support">
+    <div class="container">
+        <button class="close-section" onclick="hideSupportSection();" aria-label="Close Support Section">&times;</button>
+        <h2>Support Us</h2>
+        <p>
+            Your support helps us maintain and improve our website, allowing us to provide valuable content and resources to our community. Every contribution, no matter how small, makes a significant difference.
+        </p>
+        <!-- Optional: Add more descriptive content or testimonials here -->
+        <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank" class="donate-button">Donate Now</a>
+    </div>
+</section>
     
     <!-- Cookies Policy Section (Modal) -->
 <section class="cookies-policy" id="cookies-policy" role="dialog" aria-labelledby="cookies-policy-title" aria-modal="true">
@@ -4166,6 +4454,19 @@
     </div>
 </section>
 
+<!-- Privacy Policy Modal -->
+<section id="privacy-policy" class="privacy-policy">
+    <div class="container">
+        <button class="close-section" onclick="hidePrivacyPolicy();" aria-label="Close Privacy Policy">&times;</button>
+        <h2>Privacy Policy</h2>
+        <p>
+            <!-- Your Privacy Policy content goes here -->
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+        </p>
+        <!-- Add more content as needed -->
+    </div>
+</section>
+
 
 <!-- Terms & Conditions Section (Modal) -->
 <section class="terms-policy" id="terms-policy" role="dialog" aria-labelledby="terms-policy-title" aria-modal="true">
@@ -4250,11 +4551,18 @@
     </section>
 
     <footer>
-    <p>
-        &copy; 2025 Sports Toolkit Ltd. All rights reserved.
-        | <a href="#" onclick="showCookiesPolicy(); return false;">Cookies Policy</a>
-        | <a href="#" onclick="showTermsPolicy(); return false;">Terms &amp; Conditions</a>
-    </p>
+    <div class="footer-container">
+        <div class="footer-left">
+            <p>&copy; 2025 Sports Toolkit Ltd. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <ul class="footer-links">
+                <li><a href="#" onclick="showCookiesPolicy(); return false;">Cookies Policy</a></li>
+                <li><a href="#" onclick="showTermsPolicy(); return false;">Terms &amp; Conditions</a></li>
+                <li><a href="#" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
 
 
@@ -4904,6 +5212,28 @@ if(menuEmployabilityFeatured) {
     });
 }
 
+// Select the Support section element
+const supportSection = document.getElementById('support-section');
+
+// Function to show the Support section
+function showSupportSection() {
+    hideAllSections();
+    supportSection.classList.add('active');
+    closeMenu();
+}
+
+// Function to hide the Support section
+function hideSupportSection() {
+    supportSection.classList.remove('active');
+}
+
+// Add event listener to the new Support menu link
+const supportMenuLink = document.getElementById('menu-support');
+supportMenuLink.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    showSupportSection();
+});
+
 function showNoRightPathSection() {
     hideAllSections();
     timelineSection.classList.add('active');
@@ -5252,6 +5582,37 @@ document.getElementById('terms-policy').addEventListener('click', function(event
     // If the user clicks directly on the overlay (not the container or its children)
     if (event.target === this) {
         hideTermsPolicy();
+    }
+});
+
+// Function to show the Privacy Policy modal
+function showPrivacyPolicy() {
+    const privacySection = document.getElementById('privacy-policy');
+    privacySection.classList.add('active');
+    
+    // Prevent background scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to hide the Privacy Policy modal
+function hidePrivacyPolicy() {
+    const privacySection = document.getElementById('privacy-policy');
+    privacySection.classList.remove('active');
+    
+    // Restore background scrolling
+    document.body.style.overflow = 'auto';
+}
+
+// Event listener for the Privacy Policy close button
+document.querySelectorAll('.privacy-policy .close-section').forEach(button => {
+    button.addEventListener('click', hidePrivacyPolicy);
+});
+
+// Event listener for clicks outside the Privacy Policy container
+document.getElementById('privacy-policy').addEventListener('click', function(event) {
+    // If the user clicks directly on the overlay (not the container or its children)
+    if (event.target === this) {
+        hidePrivacyPolicy();
     }
 });
 
