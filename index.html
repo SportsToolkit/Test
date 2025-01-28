@@ -5103,7 +5103,11 @@ function addFeaturedItemListeners() {
     featuredItems.forEach(item => {
         const target = item.getAttribute('data-target');
         item.addEventListener('click', () => {
-            showSection(target);
+            if (target === 'home') {
+                showHome();
+            } else {
+                showSection(target);
+            }
             closeMenu(); 
         });
     });
@@ -5368,11 +5372,19 @@ function showCookiePreferencesModal() {
     modal.focus(); // Shift focus to the modal
 }
 
-// Hide the preferences modal
+// Hide the preferences modal and check consent status
 function hideCookiePreferencesModal() {
     const modal = document.getElementById('cookie-preferences-modal');
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
+
+    // Check Cookie Consent Status using localStorage
+    const consent = localStorage.getItem('cookieConsent');
+    console.log('hideCookiePreferencesModal called. Current cookieConsent:', consent); // Debugging line
+
+    if (!consent || consent === 'partial') {
+        showCookieConsentBanner();
+    }
 }
 
 // Accept all cookies
