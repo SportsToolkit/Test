@@ -5297,17 +5297,22 @@ function showHome() {
 }
 
 function hideAllSections() {
-    const sections = document.querySelectorAll('.about, .support, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
-    sections.forEach(section => section.classList.remove('active'));
+    aboutSection.classList.remove('active');
+    uniCoursesSection.classList.remove('active');
+    collegeCoursesSection.classList.remove('active');
+    careerPathsSection.classList.remove('active');
+    employabilitySection.classList.remove('active');
+    timelineSection.classList.remove('active');
+    insertSection.classList.remove('active');
+    supportSection.classList.remove('active'); // Add this line
     heroSection.classList.add('hidden');
-    
     if (!isAnyModalActive()) {
         hideOverlay();
     }
 }
 
 function hideAllSectionsExcept(activeSectionId) {
-    const sections = document.querySelectorAll('.about, .support, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
+    const sections = document.querySelectorAll('.about, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
     sections.forEach(section => {
         if (section.id !== activeSectionId) {
             section.classList.remove('active');
