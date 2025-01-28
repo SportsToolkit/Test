@@ -1571,6 +1571,15 @@ footer {
     font-weight: 700;
     color: #0070C9;
 }
+
+.support h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0070C9;
+    margin-top: 24px;
+    margin-bottom: 24px; /* Adds space below the headings */
+}
+
 .support p {
     font-size: 1.125rem;
     color: #555;
@@ -1580,21 +1589,26 @@ footer {
     white-space: pre-line;
 }
 
-/* Optional: Style for the Donate Button */
-.donate-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #0070C9;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
+.donate-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    background-color: #0070C9;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-.donate-button:hover,
-.donate-button:focus {
+
+.donate-btn:hover {
     background-color: #005CAB;
-    transform: translateY(-2px);
+    box-shadow: 5px 5px 0px #000;
+    transform: translate(-5px, -5px);
 }
 
 
@@ -4336,12 +4350,27 @@ footer {
 <section id="support-section" class="support">
     <div class="container">
         <button class="close-section" onclick="hideSupportSection();" aria-label="Close Support Section">&times;</button>
-        <h2>Support Us</h2>
+        <h2>Support Path2Sport</h2>
         <p>
-            Your support helps us maintain and improve our website, allowing us to provide valuable content and resources to our community. Every contribution, no matter how small, makes a significant difference.
-        </p>
-        <!-- Optional: Add more descriptive content or testimonials here -->
-        <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank" class="donate-button">Donate Now</a>
+            Path2Sport is a free resource created to help young people in Scotland from all backgrounds explore  education opportunities and careers in the sports industry. Behind the scenes, it’s a small, independent project run by Sports Toolkit Ltd — a one-person effort based in Glasgow.
+
+If you’ve found Path2Sport useful and want to support what we’re doing, there are two ways you can help:
+</p>
+
+<h3>1. Donate via “Buy Me a Coffee”</h3>
+
+<p>If you used Path2Sport once and it helped connect you with the right course or job, then we’ve done what we set out to do. We're not here to make gains, but if you’d like to help us keep Path2Sport running, you can make a contribution through <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>. It’s quick, simple, and very much appreciated.</p>
+
+<a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">
+    <button class="donate-btn">Buy Me a Coffee</button>
+</a>
+
+<h3>2. Partner with Us</h3>
+
+<p>We’re open to partnering with organisations to promote opportunities that genuinely benefit our audience, such as quality job vacancies, university courses, or initiatives in the sports industry. If you’d like to collaborate, please get in touch via <strong>info@sportstoolkit.co.uk</strong>. We’re committed to maintaining the site’s integrity, so we only promote opportunities that align with our mission to support people working towards a career in the sports industry.
+
+Thank you for considering supporting Path2Sport. Whether it’s a donation, a partnership, or simply spreading the word about the site, your support helps us continue providing this resource for the next generation of sports professionals.</p>
+        
     </div>
 </section>
     
@@ -5268,21 +5297,17 @@ function showHome() {
 }
 
 function hideAllSections() {
-    aboutSection.classList.remove('active');
-    uniCoursesSection.classList.remove('active');
-    collegeCoursesSection.classList.remove('active');
-    careerPathsSection.classList.remove('active');
-    employabilitySection.classList.remove('active');
-    timelineSection.classList.remove('active');
-    insertSection.classList.remove('active');
+    const sections = document.querySelectorAll('.about, .support, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
+    sections.forEach(section => section.classList.remove('active'));
     heroSection.classList.add('hidden');
+    
     if (!isAnyModalActive()) {
         hideOverlay();
     }
 }
 
 function hideAllSectionsExcept(activeSectionId) {
-    const sections = document.querySelectorAll('.about, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
+    const sections = document.querySelectorAll('.about, .support, .uni-courses, .college-courses, .career-paths, .employability, .timeline-section, .insert-section, .dashboard, .menu-section');
     sections.forEach(section => {
         if (section.id !== activeSectionId) {
             section.classList.remove('active');
