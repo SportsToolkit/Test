@@ -5,6 +5,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,13 +76,13 @@
         z-index: 1004;
     }
     header h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #1D1D1F;
         margin: 0;
     }
     header .menu-button {
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #0070C9;
         cursor: pointer;
@@ -106,12 +107,17 @@
         text-decoration: none;
     }
     
+    .slash {
+  color: #000; /* Make the slash black */
+}
+
+    
     @media (max-width: 768px) {
   header {
     padding: 2rem 2rem; /* More top/bottom padding for a deeper header */
   }
   header h1 {
-    font-size: 2rem; /* Larger text for 'Path2Sport /' */
+    font-size: 1.6rem; /* Larger text for 'Path2Sport /' */
   }
   header .menu-button {
     font-size: 1.2rem; /* Larger MENU font */
@@ -187,6 +193,7 @@
 
 @media (max-width: 768px) {
     .hero h1 {
+        
         white-space: normal;
         font-size: 5rem; /* adjust size for mobile if needed */
         
@@ -290,7 +297,7 @@
     .intro-text {
         font-size: 1.6rem; 
         line-height: 1.6;
-        color: #555555; 
+        color: #000000; 
         max-width: 800px; 
         margin: 0 auto 1rem;
         font-weight: 250;
@@ -422,47 +429,58 @@
     color: #005CAB;
 }
 
+@media (max-width: 768px) {
+    
+    .intro-text {
+        font-size: 1.2rem; /* Tweak as needed */
+    }
+   
+    .featured-item {
+        flex: 1 1 calc(50% - 1rem); /* 2 per row, minus gap space */
+        padding: 1.5rem;           /* Slightly reduce padding on smaller screens */
+    }
+    .featured-item h3 {
+        font-size: 1.3rem;        /* Make headings a bit smaller on tablet/mobile */
+    }
+    .featured-description {
+        font-size: 1rem;          /* Slightly reduce description text */
+    }
+}
 
-    /* RESPONSIVE STYLES */
-    @media (max-width: 768px) {
-        .featured-item {
-            flex: 1 1 100%;
-        }
-        .featured-tag {
-            font-size: 0.85rem;
-            padding: 0.2rem 0.6rem;
-        }
-        .featured-description {
-            font-size: 1rem; 
-        }
+@media (max-width: 480px) {
+    .intro-text {
+        font-size: 1rem; 
     }
-    @media (max-width: 480px) {
-        .featured-item {
-            flex: 1 1 100%;
-        }
-        .featured-tag {
-            font-size: 0.8rem;
-            padding: 0.15rem 0.5rem;
-        }
-        .featured-description {
-            font-size: 0.95rem; 
-        }
+    .featured-item {
+        flex: 1 1 100%; 
+        padding: 1rem;
     }
+    .featured-item h3 {
+        font-size: 1.1rem;
+    }
+    .featured-description {
+        font-size: 0.9rem;
+    }
+}
+
+    
     @media (max-width: 768px) {
         .hero {
           height: 100vh; 
           flex-direction: column; 
-          padding: 10px; 
+          padding: 20px; 
         }
         .hero h1 {
           font-size: 5rem;
           margin-bottom: 1rem;
         }
         .hero h2 {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
+          margin-right: 1rem;
         }
         .hero p {
-          font-size: 1.25rem;
+          font-size: 1rem;
+          margin-right: 1rem;
         }
         .cursor {
             height: 2.5rem;
@@ -534,6 +552,7 @@
     }
 
     /* UNIVERSITIES SECTION */
+    
     .universities {
         padding: 4rem 1rem;
         background-color: #f9f9f9;
@@ -858,7 +877,7 @@ footer {
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -898,9 +917,14 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+    
     .footer-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .footer-left p {
+        margin-bottom: 1rem; /* Ensures extra space under the text on smaller screens */
     }
 
     .footer-right ul.footer-links {
@@ -1083,23 +1107,23 @@ footer {
     .close-insert-section:hover {
         opacity: 1;
     }
+    
 
     /* NO WRONG PATH SECTION */
     .no-right-path-section {
-        position: fixed; 
-        top: 0;
+        position: fixed;
+        top: 80px;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 4rem 1rem;
-        background-color: #f5f5f5;
-        /* Hide the section initially */
-        transform: translateY(100%);
+        background-color: #fff;
+        padding: 3rem 1rem;
         opacity: 0;
         visibility: hidden;
+        transform: translateY(100%);
         transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
-        z-index: 1002; 
-        overflow-y: auto; 
+        z-index: 1002;
+        overflow-y: auto;
     }
     .no-right-path-section.active {
         transform: translateY(0);
@@ -1109,7 +1133,7 @@ footer {
     .no-right-path-section .container {
         max-width: 800px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 3rem 1rem;
     }
     .no-right-path-section h2 {
         font-size: 2.5rem;
@@ -2862,6 +2886,18 @@ footer {
             color: #0070C9;
             white-space: nowrap;
         }
+        
+        /* New media query for smaller screens */
+@media (max-width: 768px) {
+    .section-divider {
+        margin: 4rem 0; /* Slightly less vertical space for mobiles */
+        padding: 0 1rem; /* Add side padding if needed */
+    }
+    .divider-text {
+        font-size: 3rem;  /* Make text smaller */
+        margin: 0 0.5rem; /* Reduce margin at the sides */
+    }
+}
 
         .section-divider hr:first-of-type {
             margin-right: 1rem;
@@ -2883,7 +2919,7 @@ footer {
 
         /* News Section Styles */
         .news {
-            padding: 4rem 2rem;
+            padding: 1rem 2rem;
             background-color: #ffffff;
         }
 
@@ -2996,6 +3032,11 @@ footer {
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            
+            .news {
+        padding: 1rem 2rem; /* reduce vertical padding on smaller screens */
+    }
+    
             .news-container h2 {
                 font-size: 2rem;
                 margin-bottom: 0.5rem;
@@ -3102,7 +3143,14 @@ footer {
 
 
     <header>
-        <a href="#" id="logo-link" class="logo-link"><h1>Path2Sport / Sco</h1></a>
+        <a href="#" id="logo-link" class="logo-link">
+  <h1>
+    <span>Path2Sport</span> 
+    <span class="slash">/</span> 
+    <span>Sco</span>
+  </h1>
+</a>
+
         <div class="menu-button" id="open-menu">☰</div>
     </header>
     <section class="hero" id="hero">
@@ -3113,7 +3161,7 @@ footer {
         </h1>
         <!-- This line sits right under the H1, before the H2 -->
         <div class="hero-line"></div>
-        <h2>Find your path towards a fulfilling career in sport.</h2>
+        <h2>Find your path towards a fulfilling career in sport. </h2>
         <p class="hero-paragraph">
             Helping young people discover higher education options in <span style="font-weight: bold; color: #0070C9;">Scotland</span> and career opportunities in the sport industry.
         </p>
@@ -3293,9 +3341,8 @@ footer {
 <section class="no-right-path-section" id="no-right-path">
     <button class="close-section" aria-label="Close Section" onclick="showHome()">&times;</button>
     <div class="container">
-        <h2>No Wrong Path: Finding Your Way</h2>
+        <h2>No Wrong Path: Careers are rarely straightforward</h2>
         <div class="blog-content">
-            <h3 class="subheading">Career paths are rarely straightforward</h3>
             <p>
                 Ask any teenager about their career ambitions, and you might hear the same familiar answers: doctor, lawyer, engineer, or perhaps something in the world of sport. But life rarely unfolds in straight lines. The truth is, there's no single path to a fulfilling career. Whether your journey includes academic studies, hands-on experience, or something entirely unexpected, what matters most is finding the path that works for you.
             </p>
@@ -4199,7 +4246,7 @@ footer {
                     <div class="flip-card-front">
                         <i class="fa-solid fa-handshake-angle card-icon" aria-hidden="true"></i>
                         <h3>Build Your Network</h3>
-                        <p>Connecting with people in the sports industry opens doors. Attend events, complete a work placement, and ask professionals about their career paths. Relationships can lead to job shadows, advice, and recommendations. ItÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s never too early to expand your professional network.</p>
+                        <p>Connecting with people in the sports industry opens doors. Attend events, complete a work placement, and ask professionals about their career paths. Relationships can lead to job shadows, advice, and recommendations. ItÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢s never too early to expand your professional network.</p>
                     </div>
                     <div class="flip-card-back">
                         <h3>Quick Tips</h3>
@@ -4263,7 +4310,7 @@ footer {
                         <h3>Quick Tips</h3>
                         <ul>
                             <li>Subscribe to industry newsletters</li>
-                            <li>Reflect on what youÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ve learned and how far you've come</li>
+                            <li>Reflect on what youÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ve learned and how far you've come</li>
                             <li>Share new insights and open discussion with your team</li>
                             <li>Join professional associations for networking and development</li>
                         </ul>
@@ -4352,14 +4399,14 @@ footer {
         <button class="close-section" onclick="hideSupportSection();" aria-label="Close Support Section">&times;</button>
         <h2>Support Path2Sport</h2>
         <p>
-            Path2Sport is a free resource created to help young people in Scotland from all backgrounds explore  education opportunities and careers in the sports industry. Behind the scenes, it’s a small, independent project run by Sports Toolkit Ltd — a one-person effort based in Glasgow.
+            Path2Sport is a free resource created to help young people in Scotland from all backgrounds explore  education opportunities and careers in the sports industry. Behind the scenes, itÃ¢â‚¬â„¢s a small, independent project run by Sports Toolkit Ltd Ã¢â‚¬â€ a one-person effort based in Glasgow.
 
-If you’ve found Path2Sport useful and want to support what we’re doing, there are two ways you can help:
+If youÃ¢â‚¬â„¢ve found Path2Sport useful and want to support what weÃ¢â‚¬â„¢re doing, there are two ways you can help:
 </p>
 
-<h3>1. Donate via “Buy Me a Coffee”</h3>
+<h3>1. Contribute via Ã¢â‚¬Å“Buy Me a CoffeeÃ¢â‚¬Â</h3>
 
-<p>If you used Path2Sport once and it helped connect you with the right course or job, then we’ve done what we set out to do. We're not here to make gains, but if you’d like to help us keep Path2Sport running, you can make a contribution through <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>. It’s quick, simple, and very much appreciated.</p>
+<p>If you used Path2Sport once and it helped connect you with the right course or job, then weÃ¢â‚¬â„¢ve done what we set out to do. We're not here to make gains, but if youÃ¢â‚¬â„¢d like to help us keep Path2Sport running, you can make a contribution to our costs through <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>. ItÃ¢â‚¬â„¢s quick, simple, and very much appreciated.</p>
 
 <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">
     <button class="donate-btn">Buy Me a Coffee</button>
@@ -4367,9 +4414,9 @@ If you’ve found Path2Sport useful and want to support what we’re doing, ther
 
 <h3>2. Partner with Us</h3>
 
-<p>We’re open to partnering with organisations to promote opportunities that genuinely benefit our audience, such as quality job vacancies, university courses, or initiatives in the sports industry. If you’d like to collaborate, please get in touch via <strong>info@sportstoolkit.co.uk</strong>. We’re committed to maintaining the site’s integrity, so we only promote opportunities that align with our mission to support people working towards a career in the sports industry.
+<p>WeÃ¢â‚¬â„¢re open to partnering with organisations to promote opportunities that genuinely benefit our audience, such as quality job vacancies, university courses, or initiatives in the sports industry. If youÃ¢â‚¬â„¢d like to collaborate, please get in touch via <strong>info@sportstoolkit.co.uk</strong>. WeÃ¢â‚¬â„¢re committed to maintaining the siteÃ¢â‚¬â„¢s integrity, so we only promote opportunities that align with our mission to support people working towards a career in the sports industry.
 
-Thank you for considering supporting Path2Sport. Whether it’s a donation, a partnership, or simply spreading the word about the site, your support helps us continue providing this resource for the next generation of sports professionals.</p>
+Thank you for considering supporting Path2Sport. Whether itÃ¢â‚¬â„¢s a donation, a partnership, or simply spreading the word about the site, your support helps us continue providing this resource for the next generation of sports professionals.</p>
         
     </div>
 </section>
@@ -4648,7 +4695,7 @@ Thank you for considering supporting Path2Sport. Whether it’s a donation, a pa
     description:
         "The University of Dundee offers a wide range of academic opportunities, preparing students for diverse career paths, including those in the sports industry.",
     courses: [
-        "The University of Dundee currently does not offer dedicated sports-related degrees. However, this does not mean attending here won't lead to a fulfilling career in sport. Dundee provides a range of subjects that develop transferable skills highly valued in the sports industry. These include, but are not limited to, Business, Community Learning and Development, Psychology, and Health Sciences. Remember, not every person who works in sport studied a dedicated sports degree; thereâ€™s no wrong path."
+        "The University of Dundee currently does not offer dedicated sports-related degrees. However, this does not mean attending here won't lead to a fulfilling career in sport. Dundee provides a range of subjects that develop transferable skills highly valued in the sports industry. These include, but are not limited to, Business, Community Learning and Development, Psychology, and Health Sciences. Remember, not every person who works in sport studied a dedicated sports degree; thereÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s no wrong path."
     ],
     sportsClubs: ["Football Club", "Rugby Club", "Basketball Club"],
                 rankings: {
