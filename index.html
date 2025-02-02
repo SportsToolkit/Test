@@ -553,42 +553,46 @@
 
     /* UNIVERSITIES SECTION */
     
-    .universities {
-        padding: 4rem 1rem;
-        background-color: #f9f9f9;
-        transform: translateY(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow-y: auto;
-        z-index: 1002;
-        padding-top: 80px;
-    }
-    .universities.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    .universities h2 {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-        font-weight: 700;
-        text-align: center;
-        color: #0070C9;
-    }
-    .uni-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 2rem;
-    }
+    /* UNIVERSITIES SECTION */
+.universities {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f9f9f9;
+    padding: 3rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1002;
+    overflow-y: auto;
+}
+.universities.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+.universities .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+.universities h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: #0070C9;
+}
+.uni-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem; /* optional horizontal padding */
+}
+
     .uni-card {
         background-color: #6fe7b3;
         border: 2px solid #000; 
@@ -2865,6 +2869,25 @@ footer {
     }
 }
 
+.bottom-return-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: 2px solid #0070C9;
+  color: #0070C9;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bottom-return-button:hover {
+  background-color: #0070C9;
+  color: #FFFFFF;
+}
+
+
 /* Section Divider Styles */
         .section-divider {
             display: flex;
@@ -3337,6 +3360,13 @@ footer {
     <em>Path2Sport is an independent, free resource provided by Sports Toolkit Ltd. We share links to external sites, including universities and organisations, for informational purposes only. Users should conduct their own due diligence and verify details directly with the providers. Read our Terms & Conditions for more information.</em>
 </p>
         </div>
+        <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
     </section>
     
 <section class="no-right-path-section" id="no-right-path">
@@ -3430,6 +3460,13 @@ footer {
             <button class="modal-btn" data-modal="skills-modal">Key Skills</button>
             <button class="modal-btn" data-modal="industries-modal">Other Industries</button>
         </div>
+        <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
 </section>
 
 <div class="modal" id="skills-modal" aria-hidden="true">
@@ -3481,6 +3518,13 @@ footer {
             <div class="uni-list" id="uniList">
             </div>
         </div>
+        <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
     </section>
     
     <section class="college-courses" id="college-courses">
@@ -3830,6 +3874,13 @@ footer {
                 </tbody>
             </table>
         </div>
+        <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
     </section>
     
 <section class="career-paths" id="career-paths">
@@ -4209,6 +4260,13 @@ footer {
     </div>
   </div>
 </div>
+<button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
 </section>
     
     <section class="employability" id="employability">
@@ -4341,6 +4399,13 @@ footer {
             
         </div>
     </div>
+    <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
 </section>
 
     <!-- Dashboard Section -->
@@ -4400,14 +4465,14 @@ footer {
         <button class="close-section" onclick="hideSupportSection();" aria-label="Close Support Section">&times;</button>
         <h2>Support Path2Sport</h2>
         <p>
-            Path2Sport is a free resource created to help young people in Scotland from all backgrounds explore  education opportunities and careers in the sports industry. Behind the scenes, itÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s a small, independent project run by Sports Toolkit Ltd ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â a one-person effort based in Glasgow.
+            Path2Sport is a free resource created to help young people in Scotland from all backgrounds explore  education opportunities and careers in the sports industry. Behind the scenes, it's a small, independent project run by Sports Toolkit Ltd - a one-person effort based in Glasgow.
 
-If youÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ve found Path2Sport useful and want to support what weÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢re doing, there are two ways you can help:
+If you've found Path2Sport useful and want to support what we're doing, there are two ways you can help:
 </p>
 
-<h3>1. Contribute via ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œBuy Me a CoffeeÃƒÂ¢Ã¢â€šÂ¬Ã‚Â</h3>
+<h3>1. Contribute via 'Buy Me a Coffee'</h3>
 
-<p>If you used Path2Sport once and it helped connect you with the right course or job, then weÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ve done what we set out to do. We're not here to make gains, but if youÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢d like to help us keep Path2Sport running, you can make a contribution to our costs through <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>. ItÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s quick, simple, and very much appreciated.</p>
+<p>If you used Path2Sport once and it helped connect you with the right course or job, then we've done what we set out to do. We're not here to make gains, but if you'd like to help us keep Path2Sport running, you can make a contribution to our costs through <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>. It's quick, simple, and very much appreciated.</p>
 
 <a href="https://buymeacoffee.com/path2sport" target="_blank" rel="noopener noreferrer">
     <button class="donate-btn">Buy Me a Coffee</button>
@@ -4415,11 +4480,18 @@ If youÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ve found Path2Sport useful and want 
 
 <h3>2. Partner with Us</h3>
 
-<p>WeÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢re open to partnering with organisations to promote opportunities that genuinely benefit our audience, such as quality job vacancies, university courses, or initiatives in the sports industry. If youÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢d like to collaborate, please get in touch via <strong>info@sportstoolkit.co.uk</strong>. WeÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢re committed to maintaining the siteÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s integrity, so we only promote opportunities that align with our mission to support people working towards a career in the sports industry.
+<p>We're open to partnering with organisations to promote opportunities that genuinely benefit our audience, such as quality job vacancies, university courses, or initiatives in the sports industry. If you'd like to collaborate, please get in touch via <strong>info@sportstoolkit.co.uk</strong>. We're committed to maintaining the site's integrity, so we only promote opportunities that align with our mission to support people working towards a career in the sports industry.
 
-Thank you for considering supporting Path2Sport. Whether itÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s a donation, a partnership, or simply spreading the word about the site, your support helps us continue providing this resource for the next generation of sports professionals.</p>
+Thank you for considering supporting Path2Sport. Whether it's a donation, a partnership, or simply spreading the word about the site, your support helps us continue providing this resource for the next generation of sports professionals.</p>
         
     </div>
+    <button 
+  class="bottom-return-button" 
+  aria-label="Return to Home"
+  onclick="showHome()"
+>
+  ↵
+</button>
 </section>
     
     <!-- Cookies Policy Section (Modal) -->
